@@ -32,10 +32,12 @@ const SignUpPage = () => {
       setLoading(true);
       const response = await axios.post("/api/user/signup", user)
       console.log("Signup success" , response.data);
+      alert("User Registration Successful");
       router.push("/login")
     } catch (error: any) {
       // console.log("Something went wrong");
       console.log("Signup failed", error.response.data.error);
+      alert("User registration not successful")
     }finally{
       setLoading(false);
     }

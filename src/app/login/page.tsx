@@ -29,10 +29,12 @@ const LoginPage = () => {
       setLoading(true);
       const response = await axios.post("/api/user/login", user);
       console.log("Login successful", response.data);
+      alert("Login Successful");
       // configure the toast
       router.push("/profile")
     } catch (error: any) {
       console.log("Login failed", error.message);
+      alert("Login failed");
     }finally{
       setLoading(false)
     }
