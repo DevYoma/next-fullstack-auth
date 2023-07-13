@@ -8,6 +8,7 @@ import axios from "axios"
 const LoginPage = () => {
   const router = useRouter()
   const [loading, setLoading] = useState(false);
+  const text = `Don't have an account?`
   const [user, setUser] = useState({
     email: "", 
     password: "", 
@@ -64,7 +65,7 @@ const LoginPage = () => {
       </div>
 
       <button disabled={user.email === "" || user.password === ""} onClick={onLogin}>{loading ? "Loading" : "Login"}</button>
-    <p>Don't have an account? <Link href={'/signup'}>Sign Up</Link></p>
+    <p>{text} <Link href={'/signup'}>Sign Up</Link></p>
   </div>
   )
 }
